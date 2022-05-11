@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/new.css' %}">
+    <title>New Question</title>
+</head>
+<body>
+    <h1 align="center">New Question Page</h1>
+    <form action="http://localhost:8000/OTS/saveQuestion/" method="post">
+        {% csrf_token %}
+        <div id="container">
+
+            <div >Question Statement</div>
+            <div><textarea name="question" id="question"></textarea></div>
+        <div>Option A
+
+            <input type="text" name="optiona" id="option">
+        </div>
+        <div>Option B
+            
+            <input type="text" name="optionb" id="option">
+        </div>
+        <div>Option C
+
+            <input type="text" name="optionc" id="option">
+        </div>
+        <div>Option D
+
+            <input type="text" name="optiond" id="option">
+        </div>
+        <div>
+            <div>Answer</div>
+            <select name="answer" id="option">
+                <option value="a" id="select"  id="option">a</option>
+                <option value="b" id="select"  id="option">b</option>
+                <option value="c" id="select"  id="option">c</option>
+                <option value="d" id="select"  id="option">d</option>
+            </select>
+        </div>
+        
+        <div>
+            <input type="submit" value="Save" id="save">
+        </div>
+    </div>
+    </form>
+</body>
+</html>

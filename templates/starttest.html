@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/starttest.css' %}">
+    <title>Start Test</title>
+</head>
+<body>
+        <form action="http://localhost:8000/OTS/testresult/" method="post" >
+            {% csrf_token %}
+        {% for question in questions %}
+        <div class="question" >
+            <input type="hidden" name="qno{{question.qno}}" value="{{question.qno}}">
+            <div class="que" >
+                {{question.que}}
+            </div>
+        
+        
+        <div id="option">
+            <div class="option"><input type="radio" name="q{{question.qno}}" value="a">{{question.optiona}}</div>
+            <div class="option"><input type="radio" name="q{{question.qno}}" value="b">{{question.optionb}}</div>
+            <div class="option"><input type="radio" name="q{{question.qno}}" value="c">{{question.optionc}}</div>
+            <div class="option"><input type="radio" name="q{{question.qno}}" value="d">{{question.optiond}}</div>
+        </div>
+            {% endfor %}
+        </div>
+        <div id="submit">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>

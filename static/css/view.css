@@ -1,0 +1,50 @@
+h1{
+    text-align: center;
+    font-style: italic;
+
+}
+th{
+    color: rgb(209, 33, 142); 
+    padding: 0px 20px 5px 15px;
+}
+#que{
+   width: 500px;
+}
+#qu{
+    text-align: left;
+}
+td{
+    padding: 0px 20px 5px 15px;
+}
+table{
+    background-color: rgb(219, 224, 210);
+}
+a{
+    text-decoration: none;
+}
+#delete{
+    background-color: rgb(231, 253, 28);
+    border: 2px;
+    font-weight: bold;
+    font-size: 14px;
+    border: 2px solid;
+    border-radius: 20px;
+}
+#Edit{
+    background-color: rgb(19, 170, 180);
+    font-weight: bold;
+    border: 2px;
+    font-size: 14px;
+    border: 2px solid;
+    border-radius: 20px;
+
+}
+#back{
+    background-color: rgb(11, 179, 6);
+    font-weight: bold;
+    border: 2px;
+    font-size: 14px;
+    border: 2px solid;
+    border-radius: 10px;
+
+}

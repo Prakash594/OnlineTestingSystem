@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+
+    <title>Login</title>
+</head>
+<body>
+    <div >
+        <button><a href="http://localhost:8000/OTS/" >Back</a></button>
+    </div>
+    <form action="http://localhost:8000/OTS/loginvalidation/" method="post" >
+        {% csrf_token %}
+        <div id="container">
+            <table align="center">
+                <tr>
+                    <td id="username"><input type="text" name="username" placeholder="Username"></td>
+                </tr>
+                <tr>    
+                    <td id="username"><input type="password" name="password" placeholder="Password"></td>
+                </tr>
+                <tr>
+                    <td id="login"><input type="submit" value="Login"></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

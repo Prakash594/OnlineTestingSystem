@@ -1,0 +1,29 @@
+body{
+    background-image:url("back.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#heading{
+    color: red;
+    font-size: 25px;
+}
+#login{
+    padding-top: 150px;
+    text-align: center;
+}
+#login button{
+    border: 2px solid red;
+    width: 250px;
+    height: 40px;
+    font-size: large;
+}
+#login button a{
+    text-decoration: none;
+    
+}
+#login button a:hover{
+   color: brown;
+   font-size: 25px;
+   transition: .2s;
+
+}

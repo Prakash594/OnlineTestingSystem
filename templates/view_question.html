@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/view.css' %}">
+    <title>View Question</title>
+</head>
+
+<body>
+    <div class="menu">
+    {% if request.session.role == "ADMIN" %}
+    <button>
+        <a href="http://localhost:8000/OTS/newQuestion/">New Question</a>
+    </button>
+    <button>
+        <a href="http://localhost:8000/OTS/viewQuestion/">View Question</a>
+    </button>
+    {% endif %}
+    {% if request.session.role == "LEARNER" %}
+    <a href="http://localhost:8000/OTS/newQuestion/">Start Test</a>
+    {% endif %}
+</div>
+    <button id="back">
+        <a href="http://localhost:8000/OTS/">BACK</a>
+    </button>
+    <h1>View Questions</h1>
+    <table >
+        <tr>
+            <th>Qno</th>
+            <th id="qu">Question</th>
+            <th>Option a</th>
+            <th>Option B</th>
+            <th>Option C</th>
+            <th>Option D</th>
+            <th>Answer</th>
+        </tr>
+        {% for question in questions %}
+        <tr>
+            <td>{{question.qno}}</td>
+            <td id="que">{{question.que}}</th>
+            <td>{{question.optiona}}</td>
+            <td>{{question.optionb}}</td>
+            <td>{{question.optionc}}</td>
+            <td>{{question.optiond}}</td>
+            <td>{{question.answer}}</td>
+            <td>
+                <button id="Edit">
+                    <a href="http://localhost:8000/OTS/editQuestion?qno={{question.qno}}">Edit</a>
+                </button>
+            </td>
+            <td>
+                <button id="delete">
+                    <a href="http://localhost:8000/OTS/deleteQuestion?qno={{question.qno}}">Delete</a>
+                </button>
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+
+</html>

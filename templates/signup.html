@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+    <title>Signup</title>
+</head>
+<body>
+    <div>
+        <button><a href="http://localhost:8000/OTS/" >Back</a></button>
+    </div>
+    <form action="http://localhost:8000/OTS/saveuser/" method="post" >
+        {% csrf_token %}
+        <div id="container">
+            <table align="center">
+                <tr>
+                    <td id="username"><input type="text" name="username" placeholder="Username" id=""></td><td>{{errmsg}}</td>
+                </tr>
+                <tr>
+                    <td id="username"><input type="text" name="realname" placeholder="Realname"></td>
+                </tr>
+                <tr>
+                    <td id="username"><input type="password" name="password" placeholder="Password"></td>
+                </tr>
+                <tr>
+                    <td id="username"><input type="submit" value="Register"></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

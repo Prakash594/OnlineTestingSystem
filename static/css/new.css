@@ -1,0 +1,22 @@
+#container
+{
+    text-align: center;
+    font-size: 25px;
+}
+#question{
+    background-color: aqua;
+    width: 500px;
+    height: 120px;
+}
+#option{
+    width: 300px;
+    height: 40px;
+    margin: 5px;
+}
+#select{
+    font-size: 20px;
+}
+#save{
+    font-size: 20px;
+    color: brown;
+}

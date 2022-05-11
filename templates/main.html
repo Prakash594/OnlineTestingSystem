@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="menu">
+        {% if request.session.role == "ADMIN" %}
+        <button>
+            <a href="http://localhost:8000/OTS/newQuestion/">New Question</a>
+        </button>
+        <button>
+            <a href="http://localhost:8000/OTS/viewQuestion/">View Question</a>
+        </button>
+        {% endif %}
+        {% if request.session.role == "LEARNER" %}
+        <button>
+            <a href="http://localhost:8000/OTS/starttest/">Start Test</a>
+        </button>
+        {% endif %}
+    </div>
+
+    <div id="heading" >
+        <marquee direction="right" height="100%" width="100%"scrollamount="15">Welcome {{realname}} To Online Testing System</marquee>
+    </div>
+    <div>
+        <button><a href="http://localhost:8000/OTS/logout" >Logout</a></button>
+    </div>
+</body>
+</html>
